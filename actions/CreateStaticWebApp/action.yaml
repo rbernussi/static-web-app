@@ -16,8 +16,6 @@ inputs:
     default: 'eastus2'
 runs:
   using: composite
-  env:
-    NAME: ${{ inputs.name }}-${{ inputs.env }}
   steps:
     - name: Azure login
       uses: azure/login@v1
@@ -28,5 +26,5 @@ runs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az staticwebapp create -n ${{ env.NAME }} -g ${{ inputs.region }}-${{ inputs.env }} -l ${{ inputs.region }}
-          az staticwebapp secrets list --name ${{ env.NAME }}
+          az staticwebapp create -n ${{ inputs.name }}-${{ inputs.env }} -g ${{ inputs.region }}-${{ inputs.env }} -l ${{ inputs.region }}
+          az staticwebapp secrets list --name ${{ inputs.name }}-${{ inputs.env }}
