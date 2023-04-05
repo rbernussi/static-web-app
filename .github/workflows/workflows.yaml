@@ -16,3 +16,4 @@ jobs:
         name: newswa
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         
+        
