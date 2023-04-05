@@ -27,4 +27,4 @@ runs:
       with:
         inlineScript: |
           az staticwebapp create -n ${{ inputs.name }} -g ${{ inputs.regions }}-${{ inputs.env }}
-    - run: az logout
+          az staticwebapp secrets list --name ${{ inputs.name }}
