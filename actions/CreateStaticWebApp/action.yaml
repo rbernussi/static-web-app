@@ -26,4 +26,5 @@ runs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az staticwebapp create -n ${{ inputs.name }} -g '${{ inputs.region }}-${{ inputs.env }}'
+          az staticwebapp create -n ${{ inputs.name }} -g '${{ inputs.region }}-${{ inputs.env }}' -l ${{ inputs.region }}
+          az staticwebapp secrets list --name ${{ inputs.name }}
