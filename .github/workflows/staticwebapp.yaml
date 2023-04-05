@@ -1,8 +1,8 @@
-name: create static webapp
+name: create static webapp - app
 on:
   push:
     branches: 
-    - main
+    - bla
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true

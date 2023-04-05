@@ -2,7 +2,7 @@ name: test-app
 on:
   push:
     branches: 
-    - bla
+    - main
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: true

@@ -26,5 +26,4 @@ runs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az staticwebapp create -n ${{ inputs.name }} -g '${{ inputs.region }}-${{ inputs.env }}'
-          az staticwebapp secrets list --name ${{ inputs.name }}
+          az staticwebapp create -n ${{ inputs.name }} -g '${{ inputs.region }}-${{ inputs.env }}' -s ${{ github.server_url}}/${{ github.repository }} -b main --login-with-github
