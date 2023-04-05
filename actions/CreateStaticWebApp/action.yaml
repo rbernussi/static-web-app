@@ -27,5 +27,4 @@ runs:
       with:
         inlineScript: |
           az staticwebapp create -n ${{ inputs.name }} -g ${{ inputs.regions }}-${{ inputs.env }}
-    - name: Azure logout
-      run: az logout
+    - run: az logout
