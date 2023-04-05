@@ -27,6 +27,3 @@ runs:
       with:
         inlineScript: |
           az staticwebapp create -n ${{ inputs.name }}-${{ inputs.env }} -g ${{ inputs.region }}-${{ inputs.env }} -l ${{ inputs.region }}
-          A=$(az staticwebapp secrets list -n ${{ inputs.name }}-${{ inputs.env } -g ${{ inputs.region }}-${{ inputs.env }} | jq -r .properties.apiKey)
-          echo "$A" >> $AZURE_STATIC_WEB_APPS_API_TOKEN
-          echo "$AZURE_STATIC_WEB_APPS_API_TOKEN"
