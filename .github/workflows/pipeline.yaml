@@ -1,0 +1,7 @@
+on: [push]
+
+jobs:
+  create-static-web-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
