@@ -10,7 +10,7 @@ jobs:
   createswa:
     runs-on: ubuntu-latest
     steps:
-    - uses: ./.github/actions/CreateStaticWebApp
+    - uses: ./actions/CreateStaticWebApp
       with:
         name: newswa
         creds: ${{ secrets.AZURE_CREDENTIALS }}
