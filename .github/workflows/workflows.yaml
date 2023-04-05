@@ -1,0 +1,17 @@
+name: create static webapp
+on:
+  push:
+    branches: 
+    - main
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  createswa:
+    runs-on: ubuntu-latest
+    steps:
+      uses: ./.github/actions/CreateStaticWebApp
+      with:
+        name: newswa
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
